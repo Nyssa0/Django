@@ -16,7 +16,7 @@
 6. [Bonus](#-bonus-)
  
 ## 🖥 Introduction 🖥
-This project consists in creating a CRUD in Django
+This project consists in creating a CRUD in Django. Admin credentials : username = admin, password = admin, email = admin@admin.fr
 
 ### 🗓 Date 🗓
 ```
