@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1>Update Product n°{{data.id}}</h1>
+
+    <form action="updateproduct/{{ data.id }}" method="post">
+    {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="{{ data.name }}" required id="name">
+        <br><br>
+        <label for="description">Description:</label>
+        <input type="text" name="description" value="{{ data.description }}" required id="description">
+        <br><br>
+
+        <label for="image">Image:</label>
+        <input type="url" name="image" value="{{ data.image }}" required id="image">
+        <br><br>
+
+        <label for="price">Price:</label>
+        <input type="number" name="price" step="any" value="{{ data.price }}" required id="price">
+        <br><br>
+
+        <label for="stock">Stock:</label>
+        <input type="number" name="stock" value="{{ data.stock }}" required id="stock">
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

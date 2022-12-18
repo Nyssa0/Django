@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<h1>read</h1>
+
+<div class="main">
+	<table border="1">
+		{% for data in dataset %}
+			<tr>
+				<td><a href="read/{{data.id}}">{{ data.name }}</a></td>
+				<td>{{ data.description }}</td>
+				<td>{{ data.image }}</td>
+				<td>{{ data.price }}</td>
+				<td>{{ data.stock }}</td>
+				<td><a href="update/{{ data.id }}">update</a></td>
+				<td><a href="delete/{{ data.id }}">delete</a></td>
+			</tr>
+		{% endfor %}
+	</table>
+</div>
+<a href="create">Create product</a>
+
+</body>
+</html>
